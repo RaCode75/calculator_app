@@ -1,0 +1,265 @@
+
+// font-family: 'Spartan', sans-serif;
+
+
+// Theme 1
+
+//Backgrounds
+
+$dark_main: hsl(222, 26%, 31%);
+$dark_key_pad: hsl(223, 31%, 20%);
+$dark_screen: hsl(224, 36%, 15%);
+
+// Keys
+$dark_key: hsl(225, 21%, 49%);
+$dark_shadow: hsl(224, 28%, 35%);
+$red_switch: hsl(6, 63%, 50%);
+$red_switch--shadow: hsl(6, 70%, 34%);
+
+$dark_back_key: hsl(30, 25%, 89%);
+$dark_back_key--shadow: hsl(28, 16%, 65%);
+
+//Text
+$dark_text: hsl(221, 14%, 31%);
+$dark_text_White: hsl(0, 0, 100%);
+
+// Theme 2-------------------------------------------------
+
+// #### Backgrounds
+
+// - Light gray (main background): hsl(0, 0%, 90%)
+// - Grayish red (toggle background, keypad background): hsl(0, 5%, 81%)
+// - Very light gray (screen background): hsl(0, 0%, 93%)
+
+// #### Keys
+
+// - Dark moderate cyan (key background): hsl(185, 42%, 37%)
+// - Very dark cyan (key shadow): hsl(185, 58%, 25%)
+
+$dark_orange: hsl(25, 98%, 40%);
+$dark_orange_shadow: hsl(25, 99%, 27%);
+
+// - Light grayish yellow (key background): hsl(45, 7%, 89%)
+// - Dark grayish orange (key shadow): hsl(35, 11%, 61%)
+
+// #### Text
+
+// - Very dark grayish yellow: hsl(60, 10%, 19%)
+// - White (text): hsl(0, 0, 100%)
+
+// ### Theme 3
+
+// #### Backgrounds
+
+// - Very dark violet (main background): hsl(268, 75%, 9%)
+// - Very dark violet (toggle background, keypad background, screen background): hsl(268, 71%, 12%)
+
+// #### Keys
+
+// - Dark violet (key background): hsl(281, 89%, 26%)
+// - Vivid magenta (key shadow): hsl(285, 91%, 52%)
+
+$dark_cian_shadow: hsl(176, 100%, 44%);
+$dark_cian: hsl(177, 92%, 70%);
+
+// - Very dark violet (key background): hsl(268, 47%, 21%)
+// - Dark magenta (key shadow): hsl(290, 70%, 36%)
+
+// #### Text
+
+// - Light yellow: hsl(52, 100%, 62%)
+// - Very dark blue: hsl(198, 20%, 13%)
+// - White (text): hsl(0, 0, 100%)
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+
+    font-family: 'Spartan', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    background-color: $dark_main;
+}
+
+main{
+    background-color: $dark_main;
+    box-sizing: border-box;
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
+
+    #head{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        align-items: center;
+        width:100%;
+        color: $dark_text_White;
+
+        .logo{
+                width:50%;
+                font-size: 2rem;
+                text-align: left;
+            }
+
+        .switch_container{
+                width: 50%;
+                display:flex;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                text-align: right;
+                justify-content: flex-end;
+                align-items: center;
+
+                    .switch{
+                        width:40%;
+                        display:flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        padding: 0 0.1rem;
+                        background-color:$dark_key_pad;
+                        height:1.5rem;
+                        width: 4rem;
+                        border-radius: 1rem;
+                        margin-left: 1.5rem;
+
+                        .sw_label{
+                            position:absolute;
+                            width: 4rem;
+                            height: 1rem;
+                            margin-bottom: 2.5rem;
+                            background-color: $dark_main;
+                            span{
+                                margin: 0 0.5rem;
+                                font-size: 0.6rem;
+                            }
+                        }
+                        .switch__option{
+                            display: none;
+                            visibility: hidden;
+
+                        }
+
+                        label{
+                            width: 1rem;
+                            height:1rem;
+                            border-radius: 100%;
+                            background-color:$dark_key_pad;
+                            cursor: pointer;
+                        }
+
+                        #medium:checked + label{
+                            background-color: $red_switch;
+                            box-shadow: 1px 1px $red_switch--shadow;
+                        }
+
+                        #light:checked + label {
+                            background-color: $dark_orange;
+                            box-shadow:1px 1px $dark_orange_shadow;
+                        }
+
+                        #dark:checked + label {
+                            background-color: $dark_cian;
+                            box-shadow:1px 1px $dark_cian_shadow;
+                        }
+
+
+                    }
+
+            
+                }
+                .display{
+                    width:100%;
+                    height: 5.5rem;
+                    background-color: $dark_screen;
+                    border-radius: 1rem;
+                    margin: 1.5rem auto;
+                }          
+    }//head
+
+
+    .keyboard{
+        width: 100%;
+        background-color: $dark_key_pad;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem;
+        border-radius: 1rem;
+
+        .keyboard__row{
+            display: flex;
+            justify-content: space-around;
+            width:100%;
+
+            button{
+                box-shadow: none;
+                border:none
+            }
+
+            .key{
+                font-family: 'Spartan', sans-serif;
+                font-size: 2rem;
+                font-weight: 700;
+                margin:0.5rem;
+                width:23%;
+                height:4rem;
+                padding-top: 0.4rem;
+                border-radius: 0.5rem;
+                background-color: $dark_back_key;
+                box-shadow: 1px 3px $dark_back_key--shadow;                
+                color: $dark_key_pad;
+            }
+
+        
+        .special{
+            color:$dark_text_White;
+            text-transform: uppercase;
+        }
+            #reset, #equal{
+                width:46%;              
+
+            }
+
+            #del, #reset{
+                background-color: $dark_key;
+                box-shadow: 1px 3px $dark_shadow;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+
+            #equal{
+                background-color: $red_switch;
+                box-shadow: 1px 3px $red_switch--shadow;
+                font-size: 1rem;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 600px){
+    
+    main {
+        margin:4rem auto;
+        width: 40%;
+        #head{
+            .display {
+                height: 7.5rem;
+            }
+        }
+        .keyboard{
+            .keyboard__row{
+                .key {
+                    margin: 0.7rem;
+                }
+            }
+            }
+        }
+    }
+
