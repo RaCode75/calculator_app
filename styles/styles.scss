@@ -1,14 +1,5 @@
 
 :root {
-    --bg-main :hsl(222, 26%, 31%);
-    --toggle-keypad-bg: hsl(223, 31%, 20%);
-    --bg_display:hsl(224, 36%, 15%);
-    --key-bg:hsl(225, 21%, 49%);
-    --text-white:hsl(0, 0, 100%);
-
-}
-
-[data-theme='medium']{
     --bg-main:  hsl(222, 26%, 31%);
     --toggle-keypad-bg: hsl(223, 31%, 20%);
     --bg_display:hsl(224, 36%, 15%);
@@ -18,10 +9,13 @@
     --switch-theme-shadow:hsl(6, 70%, 34%);
     --back-key-bg:hsl(30, 25%, 89%);
     --back-key-shadow:hsl(28, 16%, 65%);
-    --text:hsl(221, 14%, 31%);
-    --text-white:hsl(0, 0, 100%);
+    --text-key:hsl(221, 14%, 31%);
+    --text:hsl(0, 0%, 100%);
+    --text-white:hsl(0, 0%, 100%);
+    --equal:hsl(0, 0%, 100%);
 
 }
+
 
 [data-theme='dark'] {
     --bg-main: hsl(268, 75%, 9%);
@@ -29,12 +23,14 @@
     --bg_display:hsl(268, 71%, 12%);
     --key-bg:hsl(281, 89%, 26%);
     --key-shadow:hsl(285, 91%, 52%);
-    --switch-theme-bg:hsl(177, 92%, 70%);
-    --switch-theme-shadow: hsl(176, 100%, 44%);
+    --switch-theme-shadow:hsl(177, 92%, 70%);
+    --switch-theme-bg: hsl(176, 100%, 44%);
     --back-key-bg:hsl(268, 47%, 21%);
     --back-key-shadow:hsl(290, 70%, 36%);
     --text:hsl(52, 100%, 62%);
-    --text-white:hsl(0, 0, 100%);
+    --text-key:hsl(52, 100%, 62%);
+    --text-white:hsl(0, 0%, 100%);
+    --equal: hsl(198, 20%, 13%);
 }
 
 [data-theme='light']{
@@ -47,31 +43,11 @@
     --switch-theme-shadow:hsl(25, 99%, 27%);
     --back-key-bg:hsl(45, 7%, 89%);
     --back-key-shadow:hsl(35, 11%, 61%);
+    --text-key:hsl(60, 10%, 19%);
     --text:hsl(60, 10%, 19%);
-    --text-white:hsl(0, 0, 100%);
+    --text-white:hsl(0, 0%, 100%);
+    --equal:hsl(0, 0%, 100%);
 }
-
-
-
-//Text
-// var(--text): hsl(221, 14%, 31%);
-// var(--text)_white: hsl(0, 0, 100%);
-
-// Theme 2-------------------------------------------------
-
-
-
-// #### Text
-$light_text: hsl(60, 10%, 19%);
-$light_text_white: hsl(0, 0, 100%);
-
-// ### Theme 3
-
-// #### Text
-
-$dark_text: hsl(52, 100%, 62%);
-$dark_blue: hsl(198, 20%, 13%);
-$dark_text_white: hsl(0, 0, 100%);
 
 
 *{
@@ -102,7 +78,7 @@ main{
         justify-content: left;
         align-items: center;
         width:100%;
-        color: var(--text-white);
+        color: var(--text);
 
         .logo{
                 width:50%;
@@ -125,7 +101,7 @@ main{
                         align-items: center;
                         justify-content: space-around;
                         padding: 0 0.1rem;
-                        background-color:--toggle-keypad-bg;
+                        background-color:var(--toggle-keypad-bg);
                         height:1.5rem;
                         width: 4rem;
                         border-radius: 1rem;
@@ -171,9 +147,7 @@ main{
                             box-shadow:1px 1px var(--switch-theme-shadow);
                         }
 
-
                     }
-
             
                 }
                 .display{
@@ -189,7 +163,7 @@ main{
                     h1{
                         font-size: 2rem;
                         font-weight: 700;
-                        color: var(--text-white);
+                        color: var(--text);
                         padding:0 1.3rem
                     }
                 }          
@@ -225,12 +199,12 @@ main{
                 border-radius: 0.5rem;
                 background-color: var(--back-key-bg);
                 box-shadow: 1px 3px var(--back-key-shadow);                
-                color: var(--toggle-keypad-bg);
+                color: var(--text-key);
             }
 
         
         .special{
-            color:var(--text)_white;
+            color:var(--text-white);
             text-transform: uppercase;
         }
             #reset, #equal{
@@ -249,6 +223,7 @@ main{
                 background-color: var(--switch-theme-bg);
                 box-shadow: 1px 3px var(--switch-theme-shadow);
                 font-size: 1rem;
+                color:var(--equal);
             }
         }
     }
