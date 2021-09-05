@@ -201,6 +201,10 @@ main{
                 box-shadow: 1px 3px var(--back-key-shadow);                
                 color: var(--text-key);
             }
+            .key:focus{
+                background-color: var(--back-key-shadow);
+                box-shadow: var(--back-key-bg);
+            }
 
         
         .special{
@@ -225,11 +229,50 @@ main{
                 font-size: 1rem;
                 color:var(--equal);
             }
+            #equal:focus{
+                background-color: var(--switch-theme-shadow);
+                box-shadow: var(--switch-theme-bg);
+            }
         }
     }
 
 }
 
+@media (prefers-color-sheme: dark){
+    html[data-theme='dark'] {
+        --bg-main: hsl(268, 75%, 9%);
+        --toggle-keypad-bg: hsl(268, 71%, 12%);
+        --bg_display:hsl(268, 71%, 12%);
+        --key-bg:hsl(281, 89%, 26%);
+        --key-shadow:hsl(285, 91%, 52%);
+        --switch-theme-shadow:hsl(177, 92%, 70%);
+        --switch-theme-bg: hsl(176, 100%, 44%);
+        --back-key-bg:hsl(268, 47%, 21%);
+        --back-key-shadow:hsl(290, 70%, 36%);
+        --text:hsl(52, 100%, 62%);
+        --text-key:hsl(52, 100%, 62%);
+        --text-white:hsl(0, 0%, 100%);
+        --equal: hsl(198, 20%, 13%);
+    }
+}
+
+@media(prefers-color-scheme: light){
+    html[data-theme='light']{
+        --bg-main:hsl(0, 0%, 90%);
+        --toggle-keypad-bg:hsl(0, 5%, 81%);
+        --bg_display:hsl(0, 0%, 93%);
+        --key-bg:hsl(185, 42%, 37%);
+        --key-shadow:hsl(185, 58%, 25%);
+        --switch-theme-bg:hsl(25, 98%, 40%);
+        --switch-theme-shadow:hsl(25, 99%, 27%);
+        --back-key-bg:hsl(45, 7%, 89%);
+        --back-key-shadow:hsl(35, 11%, 61%);
+        --text-key:hsl(60, 10%, 19%);
+        --text:hsl(60, 10%, 19%);
+        --text-white:hsl(0, 0%, 100%);
+        --equal:hsl(0, 0%, 100%);
+    }
+}
 @media screen and (min-width: 600px){
     
     main {
@@ -249,4 +292,24 @@ main{
             }
         }
     }
+    
+@media (min-width: 768px) and (orientation: portrait){
+    main {
+        margin:4rem auto;
+        width: 50%;
+        #head{
+            .display {
+                height: 7.5rem;
+            }
+        }
+        .keyboard{
+            .keyboard__row{
+                .key {
+                    margin: 0.7rem;
+                }
+            }
+            }
+        }
+    }
+
 
